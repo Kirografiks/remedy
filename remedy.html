@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparte Salud!</title>
+    <script>
+        function shareLink() {
+            const url = 'https://www.quiropracticremedy.com/recomentar-amigos/'; // Reemplaza con tu enlace real
+            const text = 'Comparte Salud! ' + url;
+            
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Comparte Salud!',
+                    text: text,
+                    url: url
+                }).catch((error) => console.log('Error al compartir:', error));
+            } else {
+                alert('Compartir no es compatible. Copia este enlace: ' + url);
+            }
+        }
+    </script>
+</head>
+<body onload="shareLink()">
+    <h1>Comparte Salud!</h1>
+    <p>Si el cuadro de compartir no se abre, copia este enlace:</p>
+    <a href="https://www.quiropracticremedy.com/recomentar-amigos/">https://www.quiropracticremedy.com/recomentar-amigos/</a>
+</body>
+</html>
